@@ -50,7 +50,9 @@ export function Form() {
     try {
       setHasBeenSubmitted(true);
       const isValid = await trigger();
-      console.log(isValid);
+      if (isValid) {
+        console.log("Form submitted successfully");
+      }
     } catch (error) {
       console.error("Error during form submission:", error);
     }
