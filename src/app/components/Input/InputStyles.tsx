@@ -2,11 +2,11 @@
 import { Eye, EyeOff } from "@styled-icons/ionicons-outline";
 import styled from "styled-components";
 
-export const StyledInput = styled.input<{ $hasError: boolean; $isValid?: boolean; }> `
+export const StyledInput = styled.input<{ $hasError?: boolean; $isValid?: boolean; }> `
   border: ${({
   $hasError, $isValid,
 }: {
-  $hasError: boolean;
+  $hasError?: boolean;
   $isValid?: boolean;
 }) => $hasError ? "1px solid #FF8080" : $isValid ? "1px solid #27B274" : "none"};
   border-radius: 10px;
@@ -17,10 +17,10 @@ export const StyledInput = styled.input<{ $hasError: boolean; $isValid?: boolean
   color: ${({
   $hasError, $isValid,
 }: {
-  $hasError: boolean;
+  $hasError?: boolean;
   $isValid?: boolean;
 }) => ($hasError ? "#FF8080" : $isValid ? "#27B274" : "#4A4E71")};
-  background: ${({ $hasError }: { $hasError: boolean; }) => $hasError ? "rgba(237, 95, 89, 0.1)" : "#ffffff"};
+  background: ${({ $hasError }: { $hasError?: boolean; }) => $hasError ? "rgba(237, 95, 89, 0.1)" : "#ffffff"};
   &:focus {
     outline: none;
     border: 1px solid #6f91bc;
@@ -49,13 +49,13 @@ export const TogglePasswordButton = styled.button`
     outline: none;
   }
 `;
-export const EyeOn = styled(Eye) <{ $hasError: boolean; }> `
-  color: ${({ $hasError }: { $hasError: boolean; }) => $hasError ? "#FF8080" : "#6f91bc"};
+export const EyeOn = styled(Eye) <{ $hasError?: boolean; }> `
+  color: ${({ $hasError }: { $hasError?: boolean; }) => $hasError ? "#FF8080" : "#6f91bc"};
   width: 24px;
   height: 24px;
 `;
-export const EyeOnOff = styled(EyeOff) <{ $hasError: boolean; }> `
-  color: ${({ $hasError }: { $hasError: boolean; }) => $hasError ? "#FF8080" : "#6f91bc"};
+export const EyeOnOff = styled(EyeOff) <{ $hasError?: boolean; }> `
+  color: ${({ $hasError }: { $hasError?: boolean; }) => $hasError ? "#FF8080" : "#6f91bc"};
   width: 24px;
   height: 24px;
 `;
