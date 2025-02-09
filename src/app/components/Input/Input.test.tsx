@@ -20,4 +20,10 @@ describe('Input Component', () => {
       expect(inputElement).toHaveProperty('disabled', true);
   });
 
+  it('renders error message', () => {
+    render(<Input error="Error message" />);
+    const errorMessage = screen.getByText('Error message');
+    expect(errorMessage).toBeTruthy();
+  });
+
 });
