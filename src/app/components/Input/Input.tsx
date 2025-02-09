@@ -18,13 +18,12 @@ export function Input({
   ...rest
 }: InputProps) {
   const [showPassword, setShowPassword] = useState(false);
-  const inputType = isPassword
-    ? showPassword
-      ? "text"
-      : "password"
-    : rest.type || "text";
-  const togglePasswordVisibility = () => {
+  const [inputType, setInputType] = useState(rest.type || "text");
+
+  const togglePasswordVisibility = (e) => {
+    e.preventDefault();
     setShowPassword(!showPassword);
+    setInputType(isPassword ? (showPassword ? "text" : "password") : rest.type || "text");
   };
 
   return (
